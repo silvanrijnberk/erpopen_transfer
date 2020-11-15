@@ -20,52 +20,59 @@ class pages(object):
     @cherrypy.expose
     @require()
     def index(self):
-        return open('static/html/homePage.html')
+        return open(getPath('static/html/homePage.html'))
 
     @cherrypy.expose
     @require()
     def selectHostTransfer(self):
-        return open('static/html/selectHostTransfer.html')
+        return open(getPath('static/html/selectHostTransfer.html'))
 
     @cherrypy.expose
     @require()
     def selectHostTemplate(self):
-        return open('static/html/selectHostTemplate.html')
+        return open(getPath('static/html/selectHostTemplate.html'))
 
     @cherrypy.expose
     @require()
     def selectEnvironment(self):
-        return open('static/html/selectEnvironment.html')
+        return open(getPath('static/html/selectEnvironment.html'))
 
     @cherrypy.expose
     @require()
     def editDatabase(self):
-        return open('static/html/editDatabase.html')
+        return open(getPath('static/html/editDatabase.html'))
 
     @cherrypy.expose
     @require()
     def overview(self):
-        return open('static/html/overview.html')
+        return open(getPath('static/html/overview.html'))
 
     @cherrypy.expose
     @require()
     def history(self):
-        return open('static/html/history.html')
+        return open(getPath('static/html/history.html'))
 
     @cherrypy.expose
     @require()
     def users(self):
-        return open('static/html/userPage.html')
+        return open(getPath('static/html/userPage.html'))
 
     @cherrypy.expose
     @require()
     def companies(self):
-        return open('static/html/companiePage.html')
+        print(os.path.abspath(os.getcwd()))
+        return open(getPath('static/html/companiePage.html'))
 
     @cherrypy.expose
     def signin(self):
-        return open('static/html/signinPage.html')
 
+        return open(getPath('static/html/signinPage.html'))
+
+def getPath(myfile):
+        import os
+        THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
+        my_file = os.path.join(THIS_FOLDER, myfile)
+        return my_file
 
 def get_databases(json_config):
     conn = get_connection(json_config)
@@ -1362,7 +1369,7 @@ if __name__ == '__main__':
     html = {
         'tools.sessions.on': True,
         'tools.auth.on': True,
-        'tools.staticdir.root': os.path.abspath(os.getcwd()),
+        'tools.staticdir.root': getPath(''),
         'tools.response_headers.headers': [('Content-Type', 'application/json')],
         'tools.sessions.timeout': 60,
     }
@@ -1390,7 +1397,7 @@ if __name__ == '__main__':
             'tools.sessions.on': True,
             'tools.sessions.timeout': 60,
             'tools.auth.on': True,
-            'tools.staticdir.root': os.path.abspath(os.getcwd()),
+            'tools.staticdir.root': getPath(''),
             'tools.response_headers.headers': [('Content-Type', 'application/json')],
 
         },
