@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script type="application/javascript" src="static\js\selectHost.js"></script>
+  <script type="application/javascript" src="static\js\settings.js"></script>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
+  <link id="pagestyle" href="static/css/standard.css" rel="stylesheet" />
+  <link href="static/css/tableList.css" rel="stylesheet" />
+
+</head>
+
+<body>
+  <div class="modal fade" id="saveEditModal" tabindex="-1" role="dialog" aria-labelledby="saveEditModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="saveEditModalLabel">Template</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <table id="input_table" class="listTable" style="border:1px solid black">
+
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="deleteEdit btn btn-primary" id="deleteEdit">Delete</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal" aria-label="Close">Done</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="sidenav">
+    <img src="static\images\company_logo.png" alt="erp|open" width="144" height="33.6">
+    <a href="/">Home page</a>
+    <a href="/selectHostTransfer" id="transfer">Transfer</a>
+    <a href="/selectHostTemplate" class="selected" id="template">Template</a>
+    <a href="/history" id="history">History</a>
+    <a href="javascript:logOut();" id="log_out" class="bottom last">Log out</a>
+  </div>
+  <div id="main">
+    <div class="header" style="background-color: rgb(96, 42, 121);">
+      <h1>Server template</h1>
+      <p> Fill in server values</p>
+    </div>
+
+    <div class='center' >
+      <table>
+        <tr>
+          <td><label>Template</label></td>
+          <td><select name="templates" id="templates">
+              <option value="empty">no templates</option>
+            </select>
+            <label class="switch">
+              <input id="template_slider" type="checkbox" checked>
+              <span class="slider round"></span>
+            </label> </td>
+        </tr>
+        <tr>
+          <td><label>Company</label></td>
+          <td><select name="companies" id="companies">
+              <option value="empty">no companies</option>
+            </select></td>
+        </tr>
+        <tr>
+          <td><label>DB Password</label></td>
+          <td><input type="password" name="password" id="password" placeholder="Password"> </td>
+        </tr>
+      </table>
+      <div class="bottomdiv">
+        <button id="get_databases" name="next" class="bigButton">get databases</button>
+      </div>
+    </div>
+    <div style=" text-align: center; margin: auto; margin-top: 30px; max-width: 25vw; ">
+      <label>Templates</label>
+      <div style=" border: 1px solid black; overflow: auto;max-height: 25vh;  ">
+      <table class="listTable" id="template_table" style=" width:  -webkit-fill-available;" >
+      </table>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

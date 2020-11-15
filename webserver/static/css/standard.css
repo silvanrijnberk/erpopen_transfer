@@ -1,0 +1,309 @@
+
+body{
+  font: Arial;
+  background-color: rgb(246, 250, 255);
+  min-width:600px;
+  font-size: 24px;
+
+}
+table{
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+ td,
+ th {
+  text-align: left;
+  padding: 4px;
+
+}
+
+
+.center {
+  margin: auto;
+  text-align: center;
+  margin-top: 30px;
+  width: max-content;
+  border-radius:20px;
+  padding: 15px;
+  background-color: hsl(0, 0%, 80%);
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+
+ 
+}
+
+.centertext {
+  text-align-last: center;
+}
+
+label{
+  font-size: 24px;
+}
+
+input[type=text], input[type=password], select, input[type=date],input[type=submit]  {
+  margin: 2px 2px;
+  display: inline-block;
+  transition: width 0.4s ease-in-out;
+  box-sizing: border-box;
+  border-radius: 8px;
+  border: 0px;
+  font-size: 24px;
+  border: 1px solid black;
+  height: 45px;
+}
+select{
+  cursor: pointer;
+}
+
+input[type=text], input[type=password]{
+  border-radius: 8px;
+  font-size: 24px;
+  height: 45px;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 400;
+    text-shadow: 2px 2px 8px #000000;
+}
+p, a, label{
+  text-shadow: 2px 2px 8px #000000;
+}
+label{
+  text-shadow: 0px 0px 10px hsl(0, 0%, 60%);;
+}
+
+.search{
+  background-color: white;
+  background-image: url('images/loupe.svg');
+  background-size: contain;
+  background-position: 5px 2px;
+  background-repeat: no-repeat;
+  padding-left: 30px;
+}
+
+
+button {
+  background-color: white;
+  border-radius: 12px;
+  color: black; 
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+button:not(.disable):hover {
+  background-color:  #0a5cb4;
+  color: white;
+  
+}
+.bottomdiv{
+  display: flow-root;
+
+}
+button[name="back"] {
+  float: left;
+}
+button[name="homePage"] {
+  float: none;
+}
+button[name="next"] {
+  float: right;
+}
+.mainButton{
+  color: white;
+  font-size: 30px;
+  padding:30px 35px;
+	background:hsl(0, 0%, 15%);
+  border:0px solid;
+  width: 60%;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-weight: 100;
+  border-radius: 10px;
+  
+}
+.bigButton{
+  font-size:20px;
+  border: 0px solid #0a5cb4;
+  padding:10px 20px;
+  font-weight: 500;
+  -moz-box-shadow:    inset 0 0 10px #000000;
+  -webkit-box-shadow: inset 0 0 10px #000000;
+  box-shadow:         inset 0 0 10px #000000;
+}
+.mainButton:hover{
+	 opacity: 0.8; 
+  border:0px solid; 
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.header {
+  padding: 13px;
+  text-align: center;
+  background: #555;
+  color: white;
+  font-size: 30px;
+}
+.sidenav {
+  height: 100%;
+  width: 160px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+.sidenav {
+  height: 100%;
+  width: 160px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+.sidenav .selected {
+  color: #f1f1f1;
+  background:  hsl(0, 0%, 25%);
+  background-color: hsl(0, 0%, 25%);
+
+}
+
+.sidenav .bottom {
+  bottom:0;
+  position: absolute;
+  display: block;
+  width: 100%;
+  border-radius:20px;
+  color: #afafaf;
+  background: rgb(75, 20, 20);
+}
+.sidenav .bottom {
+  bottom:0;
+  position: absolute;
+  display: block;
+  border-radius:20px;
+  color: #afafaf;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+
+.sidenav .second {
+  bottom:55px;
+  color: #f0f0f0;
+  width: 100%;
+  background: rgb(121, 121, 121);
+}
+
+.sidenav .second_last {
+  bottom:110px;
+  font-size: 10px;
+  width: max-content;
+  color: #afafaf;
+  background: rgb(121, 121, 121);
+}
+
+.sidenav .last {
+  bottom:0;
+  color: #f0f0f0;
+  width: 100%;
+  background: rgb(75, 20, 20);
+}
+.siden
+av a:hover {
+  color: #f1f1f1;
+}
+
+#main {
+  margin-left: 160px; /* Same as the width of the sidenav */
+  font-size: 24px; /* Increased text to enable scrolling */
+}
+
+
+.modal-dialog {
+  width: max-content;
+    max-width: 800px;
+    margin: 1.75rem auto;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(128, 128, 128);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}

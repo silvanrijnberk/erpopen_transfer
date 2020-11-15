@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script type="application/javascript" src="static\js\homepage.js"></script>
+  <script type="application/javascript" src="static\js\settings.js"></script>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
+  <link id="pagestyle" href="static/css/standard.css" rel="stylesheet" />
+  <link href="static/css/tableList.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="sidenav">
+    <img src="static\images\company_logo.png" alt="erp|open" width="144" height="33.6">
+    <a href="/" class="selected">Home page</a>
+    <a href="/selectHostTransfer">Transfer</a>
+    <a href="/selectHostTemplate">Template</a>
+    <a href="/history">History</a>
+    <a href="javascript:logOut();" id="log_out" class="bottom last">Log out</a>
+
+  </div>
+
+  <div id="main">
+    <div class="header" style="background-color: #1b531b;">
+      <h1 class="centertext">Home page</h1>
+      <p>Choose an option</p>
+    </div>
+    <div id="table_div" class='centerTable'
+      style="margin:0px; overflow:auto; float: right;margin-top: 20px;  width: 40%;  text-align: center; border: none;">
+      <table class="listTable" id="user_table" style="margin-top: 20px;margin-bottom: 20px; width: 80%; ; border-radius: 12px;">
+      </table>
+      <table class="listTable" onclick="window.location.href='/history'" id="history_table" style="margin-top: 20px; width: 80%;cursor: pointer; ">
+      </table>
+    </div>
+    <div id="button_div" class='centertext' style="margin-top: 20px; width: 60%; float: left;">
+      <button class="mainButton" onclick="window.location.href = '/selectHostTransfer'"
+        style="background-color: rgba(42, 70, 121,1); ">Transfer Production Database</button><br>
+      <button class="mainButton" onclick="window.location.href = '/selectHostTemplate'"
+        style="background-color: rgba(96, 42, 121,1);">Create New Template</button><br>
+      <button class="mainButton" onclick="window.location.href = '/history'"
+        style="background-color: rgba(121, 42, 49,1);">View Transfer History</button><br>
+    </div>
+  </div>
+</body>
+
+</html>

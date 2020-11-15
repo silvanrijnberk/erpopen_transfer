@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  </style>
+  <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script type="application/javascript" src="static\js\overview.js"></script>
+  <script type="application/javascript" src="static\js\settings.js"></script>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="static/css/tableList.css" rel="stylesheet" />
+  <link id="pagestyle" href="static/css/standard.css" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <title>Overview</title>
+</head>
+
+<body>
+  <div class="modal fade" id="saveEditModal" tabindex="-1" role="dialog" aria-labelledby="saveEditModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="saveEditModalLabel">Changed values</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class='centerTable' style="overflow:auto;">
+
+            <table id="input_table" class="listTable">
+
+            </table>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="deleteEdit btn btn-primary" id="deleteEdit">Reset</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal" aria-label="Close">
+            Done
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="sidenav">
+    <img src="static\images\company_logo.png" alt="erp|open" width="144" height="33.6">
+    <a href="/">Home page</a>
+    <a href="/selectHostTransfer" class="selected" id="transfer">Transfer</a>
+    <a href="/selectHostTemplate" id="template">Template</a>
+    <a href="/history" id="history">History</a>
+    <a href="javascript:logOut();" id="log_out" class="bottom last">Log out</a>
+  </div>
+  <div id="main">
+    <div class="header" style="background-color: rgb(42, 70, 121);">
+      <h1 class="centertext">Overview</h1>
+      <p> An overview of all configured actions</p>
+    </div>
+    <div class='center' style="width: min-content;">
+      <div id="table_div" class='centerTable' style="overflow:auto; max-height: 50vh;">
+        <table class="listTable" id="overview_table">
+        </table>
+      </div>
+      <div style="display: flex; justify-content: space-around; margin: 2px;">
+        <input type="text" style="width:100%; max-width: 100%;" id="template_name" name="template_name"
+          placeholder="template name..." ></input>
+        <div id="template_switch" style=" display: block;top:0; font-size: 14px; transform: scale(0.9);">
+          <label id="template_switch" class="switch"
+            style="margin-left:10px;margin-right:10px; margin-bottom: 0px; text-align: center;">
+            <input id="template_slider" type="checkbox" checked>
+            <span class="slider round"></span>
+          </label><br>
+          <label id="label_template_slider" style="margin:0px; font-size: 10px;text-align: center;">Create template
+          </label>
+        </div>
+        <div id="public_switch" style=" display: block;top:0; font-size: 14px; transform: scale(0.9);">
+          <label class="switch"
+            style="margin-left:10px;margin-right:10px; margin-bottom: 0px; text-align: center;">
+            <input id="public_slider" type="checkbox" checked>
+            <span class="slider round"></span>
+          </label><br>
+          <label id="label_public_slider" style="margin:0px; font-size: 10px;text-align: center;">Public template
+          </label>
+        </div>
+      </div>
+      <div style="display: flex; justify-content: space-around; margin: 2px;">
+        <div style=" display: block;top:0; font-size: 14px;">
+          <input type="text" style="width:100%; max-width: 100%;" type="text" id="email_adress" name="email_adress"
+            placeholder="e-mail adress(es)..." ></input>
+          <label id="label_email_slider" style=" 
+          overflow: hidden;
+          font-size: 14px;
+          text-align: center;   
+          max-width: 30vw;
+          white-space: nowrap;
+          position: inherit;" title="for more then one e-mail adress: e-mail;e-mail;e-mail etc...">
+            for more then one e-mail adress: <b>e-mail;e-mail;e-mail</b> etc...
+          </label>
+        </div>
+
+        <div id="email_switch" style=" display: block;top:0; font-size: 14px; transform: scale(0.9); margin-bottom: 0px;">
+          <label class="switch"
+            style="margin-left:10px;margin-right:10px; margin-bottom: 0px; text-align: center;">
+            <input id="email_slider" type="checkbox" checked>
+            <span class="slider round"></span>
+          </label><br>
+          <label id="label_email_slider" style="margin:0px; font-size: 10px;text-align: center;">Send Email
+          </label>
+        </div>
+      </div>
+      <div class="bottomdiv">
+        <button id="back" name="back" onclick="load_page('/editDatabase')" class="lefttext bigButton">Previous</button>
+        <button id="finish" style="visibility: hidden; display:block; position: absolute;" onclick="load_page('/')"
+          class="righttext bigButton">finish</button>
+        <button id="create_database" name="next" onclick="save_template()" class="righttext bigButton">Start</button>
+
+      </div>
+
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Select environment</title>
+
+  <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script type="application/javascript" src="static\js\selectEnvironment.js"></script>
+  <script type="application/javascript" src="static\js\settings.js"></script>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
+  <link id="pagestyle" href="static/css/standard.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="sidenav">
+    <img src="static\images\company_logo.png" alt="erp|open" width="144" height="33.6">
+    <a href="/">Home page</a>
+    <a href="/selectHostTransfer" class="selected" id="transfer">Transfer</a>
+    <a href="/selectHostTemplate" id="template">Template</a>
+    <a href="/history" id="history">History</a>
+    <a href="javascript:logOut();" id="log_out" class="bottom last">Log out</a>
+  </div>
+  <div id="main">
+  <div class="header" style="background-color: rgb(42, 70, 121);">
+    <h1>Configure environment</h1>
+    <p> fill in values</p>
+  </div>
+  <div class='center'>
+    <table>
+      <tr>
+        <td><label> production</label></td>
+        <td><select name="database_p" id="database_p">
+            <option value="empty">select host</option>
+          </select></td>
+      </tr>
+      <tr>
+        <td><label> Select user</label></td>
+        <td><select name="users_d" id="users_d">
+            <option value="empty">select host</option>
+          </select></td>
+      </tr>
+      <tr>
+        <td><label> Database test name</label></td>
+        <td><input type="text" name="database_t" id="database_t" placeholder="Test database name"></td>
+      </tr>
+      <tr>
+        <td><label> Admin password</label></td>
+        <td><input autocomplete="off" type="password" name="admin_pass" id="admin_pass" placeholder="admin password"></td>
+      </tr>
+      <tr>
+        <td><label> Smtp port</label></td>
+        <td><input type="text" name="smtp_port" id="smtp_port" placeholder="smtp port"></td>
+      </tr>
+      <tr>
+        <td><label> Email mailtrap</label></td>
+        <td><input type="text"  name="email_mailtrap" id="email_mailtrap" placeholder="email mailtrap"></td>
+      </tr>
+      <tr>
+        <td><label> Password mailtrap</label></td>
+        <td><input type="password" name="pass_mailtrap"  id="pass_mailtrap" placeholder="password mailtrap"></td>
+      </tr>
+    </table>
+    <div class="bottomdiv" >
+      <button id="back" name="back" onclick="back_to_selectHost()" class="bigButton">Previous</button>
+      <button id="config_database" name="next" class="bigButton">Next</button>
+    </div>
+  </div>
+  </div>
+</body>
+
+</html>

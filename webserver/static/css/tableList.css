@@ -1,0 +1,93 @@
+.listTable {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+
+.listTable tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+  } 
+
+.listTable tr:nth-of-type(odd) {
+    background-color: hsl(0, 0%, 80%);
+  } 
+
+.listTable .clickable:nth-of-type(odd) {
+  border-top: 1px solid rgb(84, 164, 255);
+  border-bottom: 1px solid rgb(84, 164, 255);
+  }
+
+  .listTable .clickable:nth-of-type(even) {
+    border-top: 1px solid rgb(84, 164, 255);
+    border-bottom: 1px solid rgb(84, 164, 255);
+  }
+
+
+  .listTable .clickable{
+    transition: 0.2s;
+  }
+
+.tablediv{
+  padding: 10px;
+}
+.listTable .clickable:hover{
+    cursor: pointer;
+    background-color: #3b3b3b;
+    color: #FFFFFF;
+  }
+
+  .listTable th {
+    background-color: #0a5cb4;
+    color: #FFFFFF;
+    position: sticky;
+    top: 0;
+    text-align: center;
+  }
+
+  .listTable td,
+  .listTable th {
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 20vw;
+    
+  }
+  .listTable td :not(:first-child):not(.clickable),
+  .listTable th :not(:first-child):not(.clickable){
+    border-left: solid 1px black;
+  }
+
+  .listTable td:not(:last-child),
+  .listTable th:not(:last-child) {
+  border-right: solid 1px black;
+  }
+  .listTable td:hover {
+    position: sticky;
+    white-space: normal;
+    height: auto;
+  }
+
+   .listTable tr:last-child {
+    border-bottom: solid 1px black;
+  } 
+
+
+  .listTable tr {
+    font-size: 18px;
+    
+  }
+
+  .centerTable{
+    margin: auto;
+    width: fit-content;
+    height: fit-content;
+    max-width: 85vw;
+    max-height: 60vh;
+    border: 1px solid black;
+    border-radius: 7px;
+  }
+
+

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>edit database</title>
+  <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script type="application/javascript" src="static\js\editDatabase.js"></script>
+  <script type="application/javascript" src="static\js\settings.js"></script>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="static/css/tableList.css" rel="stylesheet" />
+  <link id="pagestyle" href="static/css/standard.css" rel="stylesheet" />
+</head>
+
+<body style="align-content: center;">
+  <div class="modal fade" id="saveEditModal" tabindex="-1" role="dialog" aria-labelledby="saveEditModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="saveEditModalLabel">Edit row</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <table id="input_table">
+
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="deleteEdit btn btn-primary" id="deleteEdit">Delete row</button>
+          <button type="button" class="saveEdit btn btn-primary" id="saveEdit">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="main">
+  <div class="sidenav">
+    <img src="static\images\company_logo.png" alt="erp|open" width="144" height="33.6">
+    <a href="/">Home page</a>
+    <a href="/selectHostTransfer" class="selected" id="transfer">Transfer</a>
+    <a href="/selectHostTemplate" id="template">Template</a>
+    <a href="/history" id="history">History</a>
+    <a href="javascript:logOut();" id="log_out" class="bottom last">Log out</a>
+  </div>
+  <div class="header" style="background-color: rgb(42, 70, 121);">
+    <h1 class="centertext">Edit Table</h1>
+    <p>click on rows to edit or delete the row</p> 
+  </div>
+  <div class='center'>
+      <label id="select_table_label">select table:</label>
+      <select name="select_table" id="select_table"></select>
+      <input type="text" name="search" class="search" placeholder="search..." id="search"></input>
+      <select name="select_column" id="select_column"></select>
+    <div id="table_div" class='centerTable' style="overflow:auto;">
+      <table class="listTable" id="database_table">
+      </table>
+    </div>
+    <div class="bottomdiv">
+      <button id="back" name="back" onclick="load_page('/selectEnvironment')" class="bigButton">Previous</button>
+      <button id="reset" name="reset" onclick="reset()" class="bigButton">Reset</button>
+      <button id="next" name="next" onclick="load_page('/overview')" class="bigButton">Next</button>
+    </div>
+  </div>
+</body>
+
+</html>

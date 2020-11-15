@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script type="application/javascript" src="static\js\history.js"></script>
+    <script type="application/javascript" src="static\js\settings.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="static/css/tableList.css" rel="stylesheet" />
+    <link id="pagestyle" href="static/css/standard.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Transfer history</title>
+</head>
+<body>
+    <div class="sidenav">
+        <img src="static\images\company_logo.png" alt="erp|open" width="144" height="33.6">
+        <a href="/">Home page</a>
+        <a href="/selectHostTransfer">Transfer</a>
+        <a href="/selectHostTemplate">Template</a>
+        <a href="/history" class="selected">History</a>
+        <a href="javascript:logOut();" id="log_out" class="bottom last">Log out</a>
+    </div>
+    <div id="main">
+      <div class="header" style="background-color: rgb(121, 42, 49);">
+        <h1>History</h1>
+        <p>An overview of past transfers ordered from new to old</p>
+      </div>
+      <div class="center">
+        <input type="text" name="search" class="search" placeholder="search username..." id="search"></input>
+
+        <label for="start">From date:</label>
+        <input type="date" id="start" name="hist-start"
+        value="2020-07-22"
+        min="2020-01-01" max="2020-12-31">
+       <label for="end">Till date:</label>
+       <input type="date" id="end" name="hist-end"
+        value="2020-07-22"
+        min="2020-01-01" max="2010-12-31">
+        <div id="table_div" class='centerTable' style="overflow:auto;">
+            <table class="listTable" id="history_table">
+            </table>
+        </div>
+        <div class="bottomdiv">
+        <button name="homePage" onclick="window.location.href = '/'" class="righttext bigButton">Home</button>
+        </div>
+        </div>
+    </div>
+</body>
+
+</html>
