@@ -8,7 +8,6 @@ import shutil
 import subprocess
 from hashlib import md5
 import cherrypy
-import git
 import psycopg2
 from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
 import cherrypy
@@ -1025,54 +1024,54 @@ def get_connection(json_config):
     return conn
 
 
-def update_git(path, branch):
-    repo = get_repo(path)
-    for remote in repo.remotes:
-        remote.fetch()
-    g = repo.git
-    print(repo.active_branch)
-    if branch != repo.active_branch:
-        g.checkout(branch)
-    from datetime import date
-    from datetime import datetime
-    now = datetime.now()
-    t = repo.head.commit.tree
+# def update_git(path, branch):
+#     repo = get_repo(path)
+#     for remote in repo.remotes:
+#         remote.fetch()
+#     g = repo.git
+#     print(repo.active_branch)
+#     if branch != repo.active_branch:
+#         g.checkout(branch)
+#     from datetime import date
+#     from datetime import datetime
+#     now = datetime.now()
+#     t = repo.head.commit.tree
 
-    current_time = now.strftime("%H:%M:%S")
-    if repo.git.diff(t):
-        repo.git.add('--all')
-        repo.git.commit('-m', 'auto commit ' + str(date.today()) + " " + str(current_time),
-                        author='silvanrijnberk@live.com')
-    else:
-        print("nothing committed, no changes on branch: " +
-              branch + " on repo: " + path)
-    g.pull('origin', branch)
-    g.push('origin', branch)
-    print(path + " updated on branch " + branch)
+#     current_time = now.strftime("%H:%M:%S")
+#     if repo.git.diff(t):
+#         repo.git.add('--all')
+#         repo.git.commit('-m', 'auto commit ' + str(date.today()) + " " + str(current_time),
+#                         author='silvanrijnberk@live.com')
+#     else:
+#         print("nothing committed, no changes on branch: " +
+#               branch + " on repo: " + path)
+#     g.pull('origin', branch)
+#     g.push('origin', branch)
+#     print(path + " updated on branch " + branch)
 
 
-def push_git(path, branch):
-    repo = get_repo(path)
-    for remote in repo.remotes:
-        remote.fetch()
-    g = git.Git('C:/Users/Silva/OneDrive/erpopen/OdooTestGIt')
-    if branch != repo.active_branch:
-        g.checkout(branch)
-    from datetime import date
-    from datetime import datetime
-    now = datetime.now()
-    t = repo.head.commit.tree
+# def push_git(path, branch):
+#     repo = get_repo(path)
+#     for remote in repo.remotes:
+#         remote.fetch()
+#     g = git.Git('C:/Users/Silva/OneDrive/erpopen/OdooTestGIt')
+#     if branch != repo.active_branch:
+#         g.checkout(branch)
+#     from datetime import date
+#     from datetime import datetime
+#     now = datetime.now()
+#     t = repo.head.commit.tree
 
-    current_time = now.strftime("%H:%M:%S")
-    if repo.git.diff(t):
-        repo.git.add('--all')
-        repo.git.commit('-m', 'auto commit ' + str(date.today()) + " " + str(current_time),
-                        author='silvanrijnberk@live.com')
-    else:
-        print("nothing committed, no changes on branch: " +
-              branch + " on repo: " + path)
-    g.push('origin', branch)
-    print(path + " updated on branch " + branch)
+#     current_time = now.strftime("%H:%M:%S")
+#     if repo.git.diff(t):
+#         repo.git.add('--all')
+#         repo.git.commit('-m', 'auto commit ' + str(date.today()) + " " + str(current_time),
+#                         author='silvanrijnberk@live.com')
+#     else:
+#         print("nothing committed, no changes on branch: " +
+#               branch + " on repo: " + path)
+#     g.push('origin', branch)
+#     print(path + " updated on branch " + branch)
 
 
 @require()
